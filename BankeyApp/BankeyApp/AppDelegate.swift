@@ -26,10 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.backgroundColor = .systemGray4
             loginViewController.delegate = self
             onboardingContainerViewController.delegate = self
-            //window?.rootViewController = onboardingContainerViewController
+            window?.rootViewController = onboardingContainerViewController
             dummyViewController.logoutDelegate = self
             window?.rootViewController = AccountSummaryViewController()
-            //window?.rootViewController = mainViewController
+            window?.rootViewController = mainViewController
             mainViewController.selectedIndex = 2
             return true
         }
