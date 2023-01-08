@@ -12,6 +12,7 @@ class AccountSummaryCell: UITableViewCell {
     
     let typeLabel = UILabel()
     let underLineView = UIView ()
+    let nameLabel = UILabel()
     
     static let reuseID = "AccountSummaryCell"
     static let rowHieght: CGFloat = 100
@@ -37,8 +38,13 @@ extension AccountSummaryCell {
         underLineView.translatesAutoresizingMaskIntoConstraints = false
         underLineView.backgroundColor = appColor
         
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        nameLabel.text = "Account name"
+        
         contentView.addSubview(typeLabel)
         contentView.addSubview(underLineView)
+        contentView.addSubview(nameLabel)
     }
     private func layout() {
         NSLayoutConstraint.activate([
@@ -48,6 +54,8 @@ extension AccountSummaryCell {
             underLineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             underLineView.widthAnchor.constraint(equalToConstant: 60),
             underLineView.heightAnchor.constraint(equalToConstant: 4),
+            nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underLineView.bottomAnchor, multiplier: 2),
+            nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
         ])
     }
 }
